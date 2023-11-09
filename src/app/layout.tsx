@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { Raleway } from "next/font/google";
 import "./globals.css";
 import { createClient } from "@/prismicio";
+import Header from "@/components/header";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -30,7 +31,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={clsx(raleway.variable)}>
-      <body>{children} </body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
